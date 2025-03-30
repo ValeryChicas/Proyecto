@@ -22,8 +22,9 @@ namespace Proyecto
             Nombre = nombre;
         }
         //Modificar 
-        public Cargo(int CargoId, string nombre)
+        public Cargo(int cargoId, string nombre)
         {
+            CargoId = cargoId;
             Nombre = nombre;
         }
     }
