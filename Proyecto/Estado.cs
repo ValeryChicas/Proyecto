@@ -8,6 +8,7 @@ namespace Proyecto
 {
     public class Estado
     {
+        //HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         public int EstadoId { get; set; }
 
         public string Nombre { get; set; }
