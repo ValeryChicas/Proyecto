@@ -9,7 +9,6 @@ namespace IOGlobal.Entities
     public class Venta
     {
         public int VentaId { get; set; }
-
         public  DateTime FechaVenta { get; set; }
         public decimal TotalVenta { get; set; }
         public Estado EstadoId { get; set; }

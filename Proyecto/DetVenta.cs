@@ -9,10 +9,13 @@ namespace IOGlobal.Entities
     public class DetVenta
     {
         public int DetVentaId { get; set; }
-        public Venta VentaId { get; set; }
-        public Producto ProductoId { get; set; }
         public int Cantidad { get; set; }
         public decimal PrecioVenta { get; set; }
+        public Venta VentaId { get; set; }
+        public Producto ProductoId { get; set; }
+        public CitaServicio CitaServicioId { get; set; } 
+        public Cita CitaId { get; set; }
+
 
         public DetVenta() { }
 

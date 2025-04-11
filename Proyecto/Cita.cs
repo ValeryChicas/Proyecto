@@ -14,7 +14,6 @@ namespace IOGlobal.Entities
         public bool Recordatorio { get; set; }
         public decimal Peso { get; set; }
         public decimal Precio { get; set; }
-
         public Mascota MascotaId { get; set; }
         public Empleado EmpleadoId { get; set; }
 
