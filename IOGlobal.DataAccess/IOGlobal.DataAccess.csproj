@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -41,8 +41,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CargoDal.cs" />
+    <Compile Include="CategoriaDal.cs" />
+    <Compile Include="ClienteDal.cs" />
+    <Compile Include="CompraDal.cs" />
     <Compile Include="Connection.cs" />
+    <Compile Include="DetCompraDal.cs" />
+    <Compile Include="EmpleadoDal.cs" />
+    <Compile Include="EspecieDal.cs" />
+    <Compile Include="EstadoDal.cs" />
+    <Compile Include="InventarioDal.cs" />
+    <Compile Include="MascotaDal.cs" />
+    <Compile Include="ProductoDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProveedorDal.cs" />
+    <Compile Include="RazaDal.cs" />
+    <Compile Include="RolUsuarioDal.cs" />
+    <Compile Include="ServicioDal.cs" />
+    <Compile Include="UsuarioDal.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Proyecto\IOGlobalEntities.csproj">
+      <Project>{47ac0982-7aff-4c9f-a83f-55a90740a614}</Project>
+      <Name>IOGlobalEntities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

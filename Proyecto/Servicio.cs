@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Proyecto
+namespace IOGlobal.Entities
 {
     public class Servicio
     {
         public int ServicioId { get; set; }
-        public int Nombre { get; set; }
-        public int Descripcion { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
         public decimal Precio { get; set; }
 
         public Servicio() { }
 
         //AGREGAR
-        public Servicio(int nombre, int descripcion, decimal precio)
+        public Servicio(string nombre, string descripcion, decimal precio)
         {
             Nombre = nombre;
             Descripcion = descripcion;
@@ -24,7 +24,7 @@ namespace Proyecto
         }
 
         //MODIFICAR
-        public Servicio(int servicioId,int nombre, int descripcion, decimal precio)
+        public Servicio(int servicioId,string nombre, string descripcion, decimal precio)
         {
             ServicioId = servicioId;
             Nombre = nombre;

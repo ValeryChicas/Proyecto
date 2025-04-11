@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Proyecto
+namespace IOGlobal.Entities
 {
     public class Inventario
     {
         public int InventarioId { get; set; }
         public DateTime FechaIngreso { get; set; }
         public int Stock { get; set; }
-        public DateTime FechaVencimiento { get; set; }
+        public DateTime? FechaVencimiento { get; set; }
         public Producto ProductoId { get; set; }
 
         public Inventario() { }
