@@ -7,31 +7,31 @@ using System.Threading.Tasks;
 
 namespace Proyecto
 {
-    public class DevolucionCompra
+    public class DevolucionVenta
     {
         public int DevolucionId { get; set; }
         public DateTime Fecha { get; set; }
-        public DetCompra DetCompraId { get; set; }
+        public DetVenta DetVentaId { get; set; }
         public int Cantidad { get; set; }
         public Usuario UsuarioId { get; set; }
         public CategoriaDev CategoriaDevId { get; set; }
-        
-        public DevolucionCompra() { }
+
+        public DevolucionVenta() { }
         //AGREGAR
-        public DevolucionCompra(DateTime fecha, DetCompra detCompraId, int cantidad, Usuario usuarioId, CategoriaDev categoriaDevId)
+        public DevolucionVenta(DateTime fecha, DetVenta detVentaId, int cantidad, Usuario usuarioId, CategoriaDev categoriaDevId)
         {
             Fecha = fecha;
-            DetCompraId = detCompraId;
+            DetVentaId = detVentaId;
             Cantidad = cantidad;
             UsuarioId = usuarioId;
             CategoriaDevId = categoriaDevId;
         }
         //MODIFICAR
-        public DevolucionCompra( int devolucionId, DateTime fecha, DetCompra detCompraId, int cantidad, Usuario usuarioId, CategoriaDev categoriaDevId)
+        public DevolucionVenta(int devolucionId, DateTime fecha, DetVenta detVentaId, int cantidad, Usuario usuarioId, CategoriaDev categoriaDevId)
         {
             DevolucionId = devolucionId;
             Fecha = fecha;
-            DetCompraId = detCompraId;
+            DetVentaId = detVentaId;
             Cantidad = cantidad;
             UsuarioId = usuarioId;
             CategoriaDevId = categoriaDevId;

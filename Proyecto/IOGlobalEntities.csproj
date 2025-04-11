@@ -44,6 +44,7 @@
     <Compile Include="Cargo.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="CategoriaDev.cs" />
+    <Compile Include="Cierre.cs" />
     <Compile Include="Cita.cs" />
     <Compile Include="CitaServicio.cs" />
     <Compile Include="Cliente.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="DetCompra.cs" />
     <Compile Include="DetVenta.cs" />
     <Compile Include="DevolucionCompra.cs" />
+    <Compile Include="DevolucionVenta.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="Especie.cs" />
     <Compile Include="Estado.cs" />
