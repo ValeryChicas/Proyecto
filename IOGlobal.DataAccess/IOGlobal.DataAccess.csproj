@@ -43,13 +43,21 @@
   <ItemGroup>
     <Compile Include="CargoDal.cs" />
     <Compile Include="CategoriaDal.cs" />
+    <Compile Include="CategoriaDevDal.cs" />
+    <Compile Include="CierreDal.cs" />
+    <Compile Include="CitaDal.cs" />
+    <Compile Include="CitaServicioDal.cs" />
     <Compile Include="ClienteDal.cs" />
     <Compile Include="CompraDal.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="DetCompraDal.cs" />
+    <Compile Include="DetVentaDal.cs" />
+    <Compile Include="DevolucionCompraDal.cs" />
+    <Compile Include="DevolucionVentaDal.cs" />
     <Compile Include="EmpleadoDal.cs" />
     <Compile Include="EspecieDal.cs" />
     <Compile Include="EstadoDal.cs" />
+    <Compile Include="HistorialMedicoDal.cs" />
     <Compile Include="InventarioDal.cs" />
     <Compile Include="MascotaDal.cs" />
     <Compile Include="ProductoDal.cs" />
@@ -59,6 +67,7 @@
     <Compile Include="RolUsuarioDal.cs" />
     <Compile Include="ServicioDal.cs" />
     <Compile Include="UsuarioDal.cs" />
+    <Compile Include="VentaDal.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
