@@ -15,6 +15,19 @@ namespace IOGlobal.DataAccess
 {
     public class DevolucionVentaDal : Connection
     {
+        private static DevolucionVentaDal _instance;
+
+        public static DevolucionVentaDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new DevolucionVentaDal();
+
+                return _instance;
+            }
+        }
+
         public bool Insert(DevolucionVenta entity)
         {
             bool result = false;
@@ -126,7 +139,7 @@ namespace IOGlobal.DataAccess
             return result;
         }
 
-        public List<DevolucionVenta> SelectAllByDevolucionId()
+        public List<DevolucionVenta> SelectAllByDevolucionVentaId()
         {
             List<DevolucionVenta> result = null;
 

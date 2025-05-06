@@ -11,6 +11,18 @@ namespace IOGlobal.DataAccess
 {
     public class CitaDal : Connection
     {
+        private static CitaDal _instance;
+
+        public static CitaDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new CitaDal();
+
+                return _instance;
+            }
+        }
         public bool Insert(Cita entity)
         {
             bool result = false;
@@ -87,7 +99,7 @@ namespace IOGlobal.DataAccess
 
         public List<Cita> SelectAll()
         {
-            List<Cita> result = null;
+            List<Cita> result = new List<Cita>();
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
@@ -107,26 +119,26 @@ namespace IOGlobal.DataAccess
                                 entity.FechaCita = dr.GetDateTime(1);
                                 entity.FechaReprogramada = dr.IsDBNull(2) ? DateTime.MinValue : dr.GetDateTime(2);
                                 entity.Recordatorio = dr.GetBoolean(3);
-                                entity.Peso = dr.IsDBNull(4) ? 0 : dr.GetDecimal(4);
-                                entity.Precio = dr.GetDecimal(5);
+                                entity.Precio = dr.GetDecimal(4);
+                                entity.Peso = dr.IsDBNull(5) ? 0 : dr.GetDecimal(5);
                                 entity.MascotaId = new Mascota
                                 {
-                                    MascotaId = dr.GetInt32(6)
+                                    Nombre = dr.GetString(6)
                                 };
 
                                 entity.EmpleadoId = new Empleado
                                 {
-                                    EmpleadoId = dr.GetInt32(7)
+                                    NombreCompleto = dr.GetString(7)
                                 };
 
                                 entity.EstadoId = new Estado
                                 {
-                                    EstadoId = dr.GetInt32(8)
+                                    Nombre = dr.GetString(8)
                                 };
 
                                 entity.UsuarioId = new Usuario
                                 {
-                                    UsuarioId = dr.GetInt32(9)
+                                    Nombre = dr.GetString(9)
                                 };
 
 
@@ -167,22 +179,22 @@ namespace IOGlobal.DataAccess
                                 entity.Precio = dr.GetDecimal(5);
                                 entity.MascotaId = new Mascota
                                 {
-                                    MascotaId = dr.GetInt32(6)
+                                    Nombre = dr.GetString(6)
                                 };
 
                                 entity.EmpleadoId = new Empleado
                                 {
-                                    EmpleadoId = dr.GetInt32(7)
+                                    NombreCompleto = dr.GetString(7)
                                 };
 
                                 entity.EstadoId = new Estado
                                 {
-                                    EstadoId = dr.GetInt32(8)
+                                    Nombre = dr.GetString(8)
                                 };
 
                                 entity.UsuarioId = new Usuario
                                 {
-                                    UsuarioId = dr.GetInt32(9)
+                                    Nombre = dr.GetString(9)
                                 };
 
 

@@ -11,6 +11,19 @@ namespace IOGlobal.DataAccess
 {
     public class InventarioDal : Connection
     {
+        private static InventarioDal _instance;
+
+        public static InventarioDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new InventarioDal();
+
+                return _instance;
+            }
+        }
+
         public bool Insert(Inventario entity)
         {
             bool result = false;
@@ -100,7 +113,7 @@ namespace IOGlobal.DataAccess
                                 entity.FechaVencimiento = dr.IsDBNull(3) ? (DateTime?)null : dr.GetDateTime(3);
                                 entity.ProductoId = new Producto
                                 {
-                                    ProductoId = dr.GetInt32(4)
+                                    Nombre = dr.GetString(4)
                                 };
 
                                 result.Add(entity);

@@ -12,6 +12,18 @@ namespace IOGlobal.DataAccess
 {
     public class CierreDal : Connection
     {
+        private static CierreDal _instance;
+
+        public static CierreDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new CierreDal();
+
+                return _instance;
+            }
+        }
         public bool Insert(Cierre entity)
         {
             bool result = false;

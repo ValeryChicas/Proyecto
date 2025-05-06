@@ -10,6 +10,19 @@ namespace IOGlobal.DataAccess
 {
     public class CitaServicioDal : Connection
     {
+        private static CitaServicioDal _instance;
+
+        public static CitaServicioDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new CitaServicioDal();
+
+                return _instance;
+            }
+        }
+
         public bool Insert(CitaServicio entity)
         {
             bool result = false;
@@ -100,19 +113,20 @@ namespace IOGlobal.DataAccess
                                 entity.CitaServicioId = dr.GetInt32(0);
                                 entity.FechaConsulta = dr.GetDateTime(1);
                                 entity.Precio = dr.GetDecimal(2);
+                                entity.Descripcion = dr.GetString(3);
                                 entity.ServicioId = new Servicio
                                 {
-                                    ServicioId = dr.GetInt32(4)
+                                    Nombre = dr.GetString(4)
                                 };
 
                                 entity.MascotaId = new Mascota
                                 {
-                                    MascotaId = dr.GetInt32(5)
+                                    Nombre = dr.GetString(5)
                                 };
 
                                 entity.EmpleadoId = new Empleado
                                 {
-                                    EmpleadoId = dr.GetInt32(6)
+                                    Nombre = dr.GetString(6)
                                 };
 
                                 result.Add(entity);
@@ -152,17 +166,17 @@ namespace IOGlobal.DataAccess
                                 // Crear instancias completas para las propiedades relacionadas
                                 entity.ServicioId = new Servicio
                                 {
-                                    ServicioId = dr.GetInt32(4)
+                                    Nombre = dr.GetString(4)
                                 };
 
                                 entity.MascotaId = new Mascota
                                 {
-                                    MascotaId = dr.GetInt32(5)
+                                    Nombre = dr.GetString(5)
                                 };
 
                                 entity.EmpleadoId = new Empleado
                                 {
-                                    EmpleadoId = dr.GetInt32(6)
+                                    Nombre = dr.GetString(6)
                                 };
 
                                 result.Add(entity);

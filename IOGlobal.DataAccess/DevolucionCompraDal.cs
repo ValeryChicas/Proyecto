@@ -12,6 +12,18 @@ namespace IOGlobal.DataAccess
 {
     public class DevolucionCompraDal : Connection
     {
+        private static DevolucionCompraDal _instance;
+
+        public static DevolucionCompraDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new DevolucionCompraDal();
+
+                return _instance;
+            }
+        }
         public bool Insert(DevolucionCompra entity)
         {
             bool result = false;

@@ -11,6 +11,19 @@ namespace IOGlobal.DataAccess
 {
     public class EspecieDal : Connection
     {
+        private static EspecieDal _instance;
+
+        public static EspecieDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new EspecieDal();
+
+                return _instance;
+            }
+        }
+
         public bool Insert(Especie entity)
         {
             bool result = false;
@@ -73,7 +86,7 @@ namespace IOGlobal.DataAccess
 
         public List<Especie> SelectAll()
         {
-            List<Especie> result = null;
+            List<Especie> result = new List<Especie>();
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
@@ -93,7 +106,7 @@ namespace IOGlobal.DataAccess
                                 entity.Nombre = dr.GetString(1);
                                 entity.EstadoId = new Estado
                                 {
-                                    EstadoId = dr.GetInt32(2)
+                                    Nombre = dr.GetString(2)
                                 };
                                 result.Add(entity);
                             }

@@ -11,6 +11,17 @@ namespace IOGlobal.DataAccess
 {
     public class ClienteDal : Connection
     {
+        private static ClienteDal _instance;
+        public static ClienteDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new ClienteDal();
+
+                return _instance;
+            }
+        }
         public bool Insert(Cliente entity)
         {
             bool result = false;
@@ -108,7 +119,7 @@ namespace IOGlobal.DataAccess
 
                                 entity.EstadoId = new Estado
                                 {
-                                    EstadoId = dr.GetInt32(6)
+                                    Nombre = dr.GetString(6)
                                 };
 
                                 result.Add(entity);
@@ -159,6 +170,41 @@ namespace IOGlobal.DataAccess
             }
 
             return result; 
+        }
+
+        public List<Cliente> SelectAllByBuscadorCl()
+        {
+            List<Cliente> result = new List<Cliente>();
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SPBuscadorClienteSearch", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            while (dr.Read())
+                            {
+                                Cliente entity = new Cliente();
+                                entity.ClienteId = dr.GetInt32(0);
+                                entity.NombreCompleto = dr.GetString(1);
+                                entity.Telefono = dr.GetString(2);
+                                entity.Direccion = dr.IsDBNull(3) ? null : dr.GetString(3);
+                                entity.CorreoElectronico = dr.IsDBNull(4) ? null : dr.GetString(3);
+
+                                result.Add(entity);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
         }
 
     }

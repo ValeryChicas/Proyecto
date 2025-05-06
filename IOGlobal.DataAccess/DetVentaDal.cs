@@ -11,6 +11,19 @@ namespace IOGlobal.DataAccess
 {
     public class DetalleVentaDal : Connection
     {
+        private static DetalleVentaDal _instance;
+
+        public static DetalleVentaDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new DetalleVentaDal();
+
+                return _instance;
+            }
+        }
+
         public bool Insert(DetVenta entity)
         {
             bool result = false;

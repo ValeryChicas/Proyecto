@@ -11,6 +11,18 @@ namespace IOGlobal.DataAccess
 {
     public class DetCompraDal : Connection
     {
+        private static DetCompraDal _instance;
+
+        public static DetCompraDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new DetCompraDal();
+
+                return _instance;
+            }
+        }
         public bool Insert(DetCompra entity)
         {
             bool result = false;

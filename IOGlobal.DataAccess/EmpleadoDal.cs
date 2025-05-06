@@ -13,6 +13,18 @@ namespace IOGlobal.DataAccess
     {
         public class EmpleadoDal : Connection
         {
+            private static EmpleadoDal _instance;
+
+            public static EmpleadoDal Instance
+            {
+                get
+                {
+                    if (_instance == null)
+                        _instance = new EmpleadoDal();
+
+                    return _instance;
+                }
+            }
             public bool Insert(Empleado entity)
             {
                 bool result = false;
@@ -108,21 +120,21 @@ namespace IOGlobal.DataAccess
                                 entity.EmpleadoId = dr.GetInt32(0);
                                 entity.Nombre = dr.GetString(1);
                                 entity.Apellido = dr.GetString(2);
-                                entity.FechaNacimiento = dr.GetDateTime(3);
-                                entity.Genero = dr.GetString(4);
-                                entity.Telefono = dr.GetString(5);
-                                entity.Dui = dr.GetString(6);
-                                entity.Direccion = dr.IsDBNull(7) ? null : dr.GetString(7);
+                                entity.Telefono = dr.GetString(3);
+                                entity.FechaNacimiento = dr.GetDateTime(4);
+                                entity.Dui = dr.GetString(5);
+                                entity.Direccion = dr.IsDBNull(6) ? null : dr.GetString(6);
+                                entity.Genero = dr.GetString(7);
                                 entity.GradoAcademico = dr.GetString(8);
 
                                 entity.CargoId = new Cargo
                                 {
-                                    CargoId = dr.GetInt32(9)
+                                    Nombre = dr.GetString(9)
                                 };
 
                                 entity.EstadoId = new Estado
                                 {
-                                    EstadoId = dr.GetInt32(10)
+                                    Nombre = dr.GetString(10)
                                 };
 
                                 result.Add(entity);

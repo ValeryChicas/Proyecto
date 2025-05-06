@@ -11,6 +11,18 @@ namespace IOGlobal.DataAccess
 {
     public class EstadoDal : Connection
     {
+        private static EstadoDal _instance;
+
+        public static EstadoDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new EstadoDal();
+
+                return _instance;
+            }
+        }
         public bool Insert(Estado entity)
         {
             bool result = false;

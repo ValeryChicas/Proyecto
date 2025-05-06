@@ -11,6 +11,19 @@ namespace IOGlobal.DataAccess
 {
     public class UsuarioDal : Connection
     {
+        private static UsuarioDal _instance;
+
+        public static UsuarioDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new UsuarioDal();
+
+                return _instance;
+            }
+        }
+
         public bool Insert(Usuario entity)
         {
             bool result = false;
@@ -75,7 +88,7 @@ namespace IOGlobal.DataAccess
 
         public List<Usuario> SelectAll()
         {
-            List<Usuario> result = null;
+            List<Usuario> result = new List<Usuario>();
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
@@ -92,17 +105,18 @@ namespace IOGlobal.DataAccess
                             entity.UsuarioId = dr.GetInt32(0);
                             entity.Nombre = dr.GetString(1);
                             entity.Contrasena = dr.GetString(2);
-                            entity.EmpleadoId = new Empleado
-                            {
-                                EmpleadoId = dr.GetInt32(3)
-                            };
                             entity.RolusuarioId = new RolUsuario
                             {
-                                RolUsuarioId = dr.GetInt32(4)
+                                Nombre = dr.GetString(4)
                             };
+                            entity.EmpleadoId = new Empleado
+                            {
+                                Nombre = dr.GetString(3)
+                            };
+                            
                             entity.EstadoId = new Estado
                             {
-                                EstadoId = dr.GetInt32(5)
+                                Nombre = dr.GetString(5)
                             };
 
                             result.Add(entity);

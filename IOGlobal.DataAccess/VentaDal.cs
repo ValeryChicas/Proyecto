@@ -11,6 +11,18 @@ namespace IOGlobal.DataAccess
 {
     public class VentaDal : Connection
     {
+        private static VentaDal _instance;
+
+        public static VentaDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new VentaDal();
+
+                return _instance;
+            }
+        }
         public bool Insert(Venta entity)
         {
             bool result = false;

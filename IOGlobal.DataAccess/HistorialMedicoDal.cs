@@ -11,6 +11,18 @@ namespace IOGlobal.DataAccess
 {
     public class HistorialMedicoDal : Connection
     {
+        private static HistorialMedicoDal _instance;
+
+        public static HistorialMedicoDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new HistorialMedicoDal();
+
+                return _instance;
+            }
+        }
         public bool Insert(HistorialMedico entity)
         {
             bool result = false;
@@ -101,7 +113,7 @@ namespace IOGlobal.DataAccess
                                 entity.Observaciones = dr.IsDBNull(4) ? null : dr.GetString(4);
                                 entity.MascotaId = new Mascota
                                 {
-                                    MascotaId = dr.GetInt32(5)
+                                    Nombre = dr.GetString(5)
                                 };
 
                                 result.Add(entity);
@@ -141,7 +153,7 @@ namespace IOGlobal.DataAccess
                                 entity.Observaciones = dr.IsDBNull(4) ? null : dr.GetString(4);
                                 entity.MascotaId = new Mascota
                                 {
-                                    MascotaId = dr.GetInt32(5)
+                                    Nombre = dr.GetString(5)
                                 };
 
                                 result.Add(entity);

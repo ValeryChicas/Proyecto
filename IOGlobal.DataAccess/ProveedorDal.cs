@@ -11,6 +11,16 @@ namespace IOGlobal.DataAccess
 {
     public class ProveedorDal : Connection
     {
+        private static ProveedorDal _instance;
+        public static ProveedorDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new ProveedorDal();
+                return _instance;
+            }
+        }
         public bool Insert(Proveedor entity)
         {
             bool result = false;

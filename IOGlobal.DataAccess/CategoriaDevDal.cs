@@ -11,6 +11,20 @@ namespace IOGlobal.DataAccess
 {
     public class CategoriaDevDal : Connection
     {
+
+        private static CategoriaDevDal _instance;
+
+        public static CategoriaDevDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new CategoriaDevDal();
+
+                return _instance;
+            }
+        }
+
         public bool Insert(CategoriaDev entity)
         {
             bool result = false;

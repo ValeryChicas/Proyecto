@@ -46,16 +46,223 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Empleado.cs">
+    <Compile Include="Contenedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empleado.Designer.cs">
+    <Compile Include="Contenedor.Designer.cs">
+      <DependentUpon>Contenedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Devoluciones\CierreCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Devoluciones\CierreCaja.Designer.cs">
+      <DependentUpon>CierreCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Devoluciones\DevolucionCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Devoluciones\DevolucionCompra.Designer.cs">
+      <DependentUpon>DevolucionCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Devoluciones\Devolucionventa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Devoluciones\Devolucionventa.Designer.cs">
+      <DependentUpon>Devolucionventa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdministracion\Cargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdministracion\Cargo.Designer.cs">
+      <DependentUpon>Cargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdministracion\Empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdministracion\Empleado.Designer.cs">
       <DependentUpon>Empleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdministracion\Rol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdministracion\Rol.Designer.cs">
+      <DependentUpon>Rol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdministracion\Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdministracion\Usuario.Designer.cs">
+      <DependentUpon>Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAtencionCl\BuscadorClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAtencionCl\BuscadorClientes.Designer.cs">
+      <DependentUpon>BuscadorClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAtencionCl\BuscadorMascotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAtencionCl\BuscadorMascotas.Designer.cs">
+      <DependentUpon>BuscadorMascotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAtencionCl\Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAtencionCl\Cliente.Designer.cs">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAtencionCl\Especie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAtencionCl\Especie.Designer.cs">
+      <DependentUpon>Especie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAtencionCl\HistorialMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAtencionCl\HistorialMedico.Designer.cs">
+      <DependentUpon>HistorialMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAtencionCl\Mascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAtencionCl\Mascota.Designer.cs">
+      <DependentUpon>Mascota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAtencionCl\Raza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAtencionCl\Raza.Designer.cs">
+      <DependentUpon>Raza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCompra\Compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCompra\Compra.Designer.cs">
+      <DependentUpon>Compra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCompra\Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCompra\Proveedores.Designer.cs">
+      <DependentUpon>Proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVenta\Venta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVenta\Venta.Designer.cs">
+      <DependentUpon>Venta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Categoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\Categoria.Designer.cs">
+      <DependentUpon>Categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\Inventario.Designer.cs">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\Producto.Designer.cs">
+      <DependentUpon>Producto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Empleado.resx">
+    <Compile Include="ServiciosYCitas\Cita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiciosYCitas\Cita.Designer.cs">
+      <DependentUpon>Cita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosYCitas\CitaServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiciosYCitas\CitaServicio.Designer.cs">
+      <DependentUpon>CitaServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosYCitas\Servicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiciosYCitas\Servicio.Designer.cs">
+      <DependentUpon>Servicio.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Contenedor.resx">
+      <DependentUpon>Contenedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdministracion\Cargo.resx">
+      <DependentUpon>Cargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdministracion\Empleado.resx">
       <DependentUpon>Empleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdministracion\Rol.resx">
+      <DependentUpon>Rol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdministracion\Usuario.resx">
+      <DependentUpon>Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAtencionCl\BuscadorClientes.resx">
+      <DependentUpon>BuscadorClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAtencionCl\BuscadorMascotas.resx">
+      <DependentUpon>BuscadorMascotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAtencionCl\Cliente.resx">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAtencionCl\Especie.resx">
+      <DependentUpon>Especie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAtencionCl\HistorialMedico.resx">
+      <DependentUpon>HistorialMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAtencionCl\Mascota.resx">
+      <DependentUpon>Mascota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAtencionCl\Raza.resx">
+      <DependentUpon>Raza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCompra\Compra.resx">
+      <DependentUpon>Compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCompra\Proveedores.resx">
+      <DependentUpon>Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVenta\Venta.resx">
+      <DependentUpon>Venta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\Categoria.resx">
+      <DependentUpon>Categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\Inventario.resx">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\Producto.resx">
+      <DependentUpon>Producto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -67,6 +274,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ServiciosYCitas\Cita.resx">
+      <DependentUpon>Cita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiciosYCitas\CitaServicio.resx">
+      <DependentUpon>CitaServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiciosYCitas\Servicio.resx">
+      <DependentUpon>Servicio.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -80,6 +296,108 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\delete %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\electronic-healthcare_17789179.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\package_2764511.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appointment_5559786.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Especies y razas 32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pacientess.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Historial medico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pacientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crowd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employees.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-basket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\organization_3235799.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box_10939847.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pet-food_6170767.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product-range_3897014.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product-merchandising_4857240.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\veterinary-care %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pet-house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clinic.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iniciar-sesion %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IOGlobal.BusinessLogic\IOGlobal.BusinessLogic.csproj">
+      <Project>{e627ef86-8882-4231-9380-1c120ed5ab38}</Project>
+      <Name>IOGlobal.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Proyecto\IOGlobalEntities.csproj">
+      <Project>{47ac0982-7aff-4c9f-a83f-55a90740a614}</Project>
+      <Name>IOGlobalEntities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

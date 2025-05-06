@@ -6,11 +6,24 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Proyecto;
 
 namespace IOGlobal.DataAccess
 {
     public class CategoriaDal : Connection
     {
+        private static CategoriaDal _instance;
+                                 
+        public static CategoriaDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new CategoriaDal();
+
+                return _instance;
+            }
+        }
         public bool Insert(Categoria entity)
         {
             bool result = false;
@@ -73,7 +86,7 @@ namespace IOGlobal.DataAccess
 
         public List<Categoria> SelectAll()
         {
-            List<Categoria> result = null;
+            List<Categoria> result = new List<Categoria>();
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
@@ -91,7 +104,7 @@ namespace IOGlobal.DataAccess
                             entity.Nombre = dr.GetString(1);
                             entity.EstadoId = new Estado
                             {
-                                EstadoId = dr.GetInt32(2)
+                                Nombre = dr.GetString(2)
                             };
 
                             result.Add(entity);

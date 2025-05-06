@@ -11,6 +11,16 @@ namespace IOGlobal.DataAccess
 {
     public class RazaDal : Connection
     {
+        private static RazaDal _instance;
+        public static RazaDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new RazaDal();
+                return _instance;
+            }
+        }
         public bool Insert(Raza entity)
         {
             bool result = false;
@@ -73,7 +83,7 @@ namespace IOGlobal.DataAccess
 
         public List<Raza> SelectAll()
         {
-            List<Raza> result = null;
+            List<Raza> result = new List<Raza> ();
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
@@ -93,7 +103,7 @@ namespace IOGlobal.DataAccess
                                 entity.Nombre = dr.GetString(1);
                                 entity.EstadoId = new Estado
                                 {
-                                    EstadoId = dr.GetInt32(2)  
+                                    Nombre = dr.GetString(2)  
                                 };
 
                                 result.Add(entity);  

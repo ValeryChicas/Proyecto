@@ -11,6 +11,17 @@ namespace IOGlobal.DataAccess
 {
     public class CompraDal : Connection
     {
+        private static CompraDal _instance;
+        public static CompraDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new CompraDal();
+
+                return _instance;
+            }
+        }
         public bool Insert(Compra entity)
         {
             bool result = false;

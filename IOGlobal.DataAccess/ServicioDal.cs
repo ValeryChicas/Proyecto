@@ -11,6 +11,18 @@ namespace IOGlobal.DataAccess
 {
     public class ServicioDal : Connection
     {
+        private static ServicioDal _instance;
+
+        public static ServicioDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new ServicioDal();
+
+                return _instance;
+            }
+        }
         public bool Insert(Servicio entity)
         {
             bool result = false;

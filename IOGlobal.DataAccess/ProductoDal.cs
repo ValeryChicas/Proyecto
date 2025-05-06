@@ -11,6 +11,18 @@ namespace IOGlobal.DataAccess
 {
     public class ProductoDal : Connection
     {
+        private static ProductoDal _instance;
+
+        public static ProductoDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new ProductoDal();
+
+                return _instance;
+            }
+        }
         public bool Insert(Producto entity)
         {
             bool result = false;
@@ -83,7 +95,7 @@ namespace IOGlobal.DataAccess
 
         public List<Producto> SelectAll()
         {
-            List<Producto> result = null;
+            List<Producto> result = new List<Producto>(); // Initialize the list to avoid CS0165
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
@@ -104,15 +116,11 @@ namespace IOGlobal.DataAccess
                             entity.StockMinimo = dr.GetInt32(4);
                             entity.CategoriaId = new Categoria
                             {
-                                CategoriaId = dr.GetInt32(5)
+                                Nombre = dr.GetString(5)
                             };
                             entity.EstadoId = new Estado
                             {
-                                EstadoId = dr.GetInt32(6)
-                            };
-                            entity.UsuarioId = new Usuario
-                            {
-                                UsuarioId = dr.GetInt32(7)
+                                Nombre = dr.GetString(6)
                             };
 
                             result.Add(entity);
@@ -126,7 +134,7 @@ namespace IOGlobal.DataAccess
 
         public List<Producto> SelectAllByProductoId()
         {
-            List<Producto> result = null;
+            List<Producto> result = new List<Producto>(); // Initialize the list to avoid CS0165
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
@@ -140,7 +148,6 @@ namespace IOGlobal.DataAccess
                     {
                         if (dr != null)
                         {
-                            result = new List<Producto>();
                             while (dr.Read())
                             {
                                 Producto entity = new Producto();
@@ -162,14 +169,14 @@ namespace IOGlobal.DataAccess
                                     UsuarioId = dr.GetInt32(7)
                                 };
 
-                                result.Add(entity); 
+                                result.Add(entity);
                             }
                         }
                     }
                 }
             }
 
-            return result; 
+            return result;
         }
     }
 }

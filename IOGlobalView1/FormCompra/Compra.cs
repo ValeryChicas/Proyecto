@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IOGlobalView1
+namespace IOGlobalView1.FormCompra
 {
-    public partial class Empleado : Form
+    public partial class Compra : Form
     {
-        public Empleado()
+        public Compra()
         {
             InitializeComponent();
         }

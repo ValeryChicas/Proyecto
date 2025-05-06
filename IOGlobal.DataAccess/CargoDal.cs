@@ -11,6 +11,18 @@ namespace IOGlobal.DataAccess
 {
     public class CargoDal : Connection
     {
+        private static CargoDal _instance;
+
+        public static CargoDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new CargoDal();
+
+                return _instance;
+            }
+        }
 
         public bool Insert(Cargo entity)
         {

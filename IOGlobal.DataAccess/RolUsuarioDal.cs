@@ -13,6 +13,18 @@ namespace IOGlobal.DataAccess
     {
         public class RolUsuarioDal : Connection
         {
+            private static RolUsuarioDal _instance;
+
+            public static RolUsuarioDal Instance
+            {
+                get
+                {
+                    if (_instance == null)
+                        _instance = new RolUsuarioDal();
+
+                    return _instance;
+                }
+            }
             public bool Insert(RolUsuario entity)
             {
                 bool result = false;
@@ -73,7 +85,7 @@ namespace IOGlobal.DataAccess
 
             public List<RolUsuario> SelectAll()
             {
-                List<RolUsuario> result = null;
+                List<RolUsuario> result = new List<RolUsuario>();
 
                 using (SqlConnection conn = new SqlConnection(_connectionString))
                 {

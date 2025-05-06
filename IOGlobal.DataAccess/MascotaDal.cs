@@ -11,6 +11,18 @@ namespace IOGlobal.DataAccess
 {
     public class MascotaDal : Connection
     {
+        private static MascotaDal _instance;
+
+        public static MascotaDal Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new MascotaDal();
+
+                return _instance;
+            }
+        }
         public bool Insert(Mascota entity)
         {
             bool result = false;
@@ -88,7 +100,7 @@ namespace IOGlobal.DataAccess
             
         public List<Mascota> SelectAll()
         {
-            List<Mascota> result = null;
+            List<Mascota> result = new List<Mascota>();
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
@@ -109,24 +121,23 @@ namespace IOGlobal.DataAccess
                                 entity.FechaNacimiento = dr.GetDateTime(2);
                                 entity.Peso = dr.IsDBNull(3) ? 0 : dr.GetDecimal(3);
                                 entity.Sexo = dr.GetString(4);
-                                entity.Peso = dr.IsDBNull(3) ? 0 : dr.GetDecimal(3);
                                 entity.Alergias = dr.IsDBNull(6) ? null : dr.GetString(6);  
                                 entity.EspecieId = new Especie
                                 {
-                                    EspecieId = dr.GetInt32(7)  
+                                    Nombre = dr.GetString(7)  
                                 };
 
                                 entity.RazaId = new Raza
                                 {
-                                    RazaId = dr.GetInt32(8)  
+                                    Nombre = dr.GetString(8)  
                                 };
 
                                 entity.ClienteId = new Cliente
                                 {
-                                    ClienteId = dr.GetInt32(9)  
+                                    NombreCompleto = dr.GetString(9)  
                                 };
 
-                                result.Add(entity);  
+                                result.Add(entity);
                             }
                         }
                     }
